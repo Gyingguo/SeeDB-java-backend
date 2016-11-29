@@ -139,19 +139,19 @@ public class MainMemoryPaperExperiments {
 	@Test
 	public void Topk1PruningTest() throws Exception {
 		// TODO: maybe we want to implement hoeffding bounds
-		template(MainMemoryPruningAlgorithm.TOP_K1);
+		// template(MainMemoryPruningAlgorithm.TOP_K1);
 	}
 	
 	@Test
 	public void Topk2PruningTest() throws Exception {
 		// TODO: maybe we want to implement hoeffding bounds
-		template(MainMemoryPruningAlgorithm.TOP_K2);
+		// template(MainMemoryPruningAlgorithm.TOP_K2);
 	}
 	
 	@Test
 	public void Topk3PruningTest() throws Exception {
 		// TODO: maybe we want to implement hoeffding bounds
-		template(MainMemoryPruningAlgorithm.TOP_K3);
+		// template(MainMemoryPruningAlgorithm.TOP_K3);
 	}
 	
 	//@Test
@@ -167,19 +167,19 @@ public class MainMemoryPaperExperiments {
 
 	//@Test
 	public void MAB3PruningTest() throws Exception {
-		template(MainMemoryPruningAlgorithm.MAB3);
+		// template(MainMemoryPruningAlgorithm.MAB3);
 	}
 	
 	@Test
 	public void MAB4PruningTest() throws Exception {
 		// TODO: maybe we want to vary # of phases
-		template(MainMemoryPruningAlgorithm.MAB4);
+		// template(MainMemoryPruningAlgorithm.MAB4);
 	}
 	
 	@Test
 	public void MAB5PruningTest() throws Exception {
 		// TODO: maybe we want to vary # of phases
-		template(MainMemoryPruningAlgorithm.MAB5);
+		// template(MainMemoryPruningAlgorithm.MAB5);
 	}
 
 	public void template(MainMemoryPruningAlgorithm alg) throws Exception {
@@ -245,18 +245,18 @@ public class MainMemoryPaperExperiments {
 			settings.logFile = getFileName("no_pruning", dataset, 
 					settings.mainMemoryNumViewsToSelect);
 			break;
-		case TOP_K1:
-			settings.logFile = getFileName("top_k_1_pruning", dataset, 
-					settings.mainMemoryNumViewsToSelect);
-			break;
-		case TOP_K2:
-			settings.logFile = getFileName("top_k_2_pruning", dataset, 
-					settings.mainMemoryNumViewsToSelect);
-			break;
-		case TOP_K3:
-			settings.logFile = getFileName("top_k_3_pruning", dataset,
-					settings.mainMemoryNumViewsToSelect);
-			break;
+//		case TOP_K1:
+//			settings.logFile = getFileName("top_k_1_pruning", dataset, 
+//					settings.mainMemoryNumViewsToSelect);
+//			break;
+//		case TOP_K2:
+//			settings.logFile = getFileName("top_k_2_pruning", dataset, 
+//					settings.mainMemoryNumViewsToSelect);
+//			break;
+//		case TOP_K3:
+//			settings.logFile = getFileName("top_k_3_pruning", dataset,
+//					settings.mainMemoryNumViewsToSelect);
+//			break;
 		case MAB1:
 			settings.logFile = getFileName("mab1_pruning", dataset, 
 					settings.mainMemoryNumViewsToSelect);
@@ -265,18 +265,18 @@ public class MainMemoryPaperExperiments {
 			settings.logFile = getFileName("mab2_pruning", dataset, 
 					settings.mainMemoryNumViewsToSelect);
 			break;
-		case MAB3:
-			settings.logFile = getFileName("mab3_pruning", dataset, 
-					settings.mainMemoryNumViewsToSelect);
-			break;
-		case MAB4:
-			settings.logFile = getFileName("mab4_pruning", dataset, 
-					settings.mainMemoryNumViewsToSelect);
-			break;
-		case MAB5:
-			settings.logFile = getFileName("mab5_pruning", dataset, 
-					settings.mainMemoryNumViewsToSelect);
-			break;
+//		case MAB3:
+//			settings.logFile = getFileName("mab3_pruning", dataset, 
+//					settings.mainMemoryNumViewsToSelect);
+//			break;
+//		case MAB4:
+//			settings.logFile = getFileName("mab4_pruning", dataset, 
+//					settings.mainMemoryNumViewsToSelect);
+//			break;
+//		case MAB5:
+//			settings.logFile = getFileName("mab5_pruning", dataset, 
+//					settings.mainMemoryNumViewsToSelect);
+//			break;
 		}
 	}
 

@@ -77,9 +77,9 @@ public class PaperExperiments {
 				settings.differenceOperators.add(DifferenceOperators.AGGREGATE);
 				settings.logFile = "/Users/Manasi/Public/testResults/" + settings.getDescriptor() + "_" + tables[i] +"_" +queries[i];
 				if (b == Backend.POSTGRES) {
-					runSeeDB(queries[i], settings, DBSettings.getPostgresDefault());
+					runSeeDB(queries[i], settings, DBSettings.getDefault());
 				} else if (b == Backend.VERTICA) {
-					runSeeDB(queries[i], settings, DBSettings.getVerticaDefault());
+					runSeeDB(queries[i], settings, DBSettings.getDefault());
 				}	
 			}
 		}
@@ -109,9 +109,9 @@ public class PaperExperiments {
 					settings.logFile = "testResults/" + settings.getDescriptor() + "_" + tables[i] +"_" +queries[i];
 					for (int ii = 0; ii < 3; ii++) {
 						if (b == Backend.POSTGRES) {
-							runSeeDB(queries[i], settings, DBSettings.getPostgresDefault());
+							runSeeDB(queries[i], settings, DBSettings.getDefault());
 						} else if (b == Backend.VERTICA) {
-							runSeeDB(queries[i], settings, DBSettings.getVerticaDefault());
+							runSeeDB(queries[i], settings, DBSettings.getDefault());
 						}
 					}
 					break;
@@ -146,9 +146,11 @@ public class PaperExperiments {
 							"_" +queries[table_idx];
 					for (int ii = 0; ii < 3; ii++) {
 						if (b == Backend.POSTGRES) {
-							runSeeDB(queries[table_idx], settings, DBSettings.getPostgresDefault());
+							// runSeeDB(queries[table_idx], settings, DBSettings.getPostgresDefault());
+							runSeeDB(queries[table_idx], settings, DBSettings.getDefault());
 						} else if (b == Backend.VERTICA) {
-							runSeeDB(queries[table_idx], settings, DBSettings.getVerticaDefault());
+							// runSeeDB(queries[table_idx], settings, DBSettings.getVerticaDefault());
+							runSeeDB(queries[table_idx], settings, DBSettings.getDefault());
 						}
 					}
 				}
@@ -171,7 +173,8 @@ public class PaperExperiments {
 		settings.mergeQueries 					= false;
 		settings.makeGraphs = true;
 		settings.differenceOperators.add(DifferenceOperators.AGGREGATE);
-		runSeeDB(query, settings, DBSettings.getLocalDefault());	
+		// runSeeDB(query, settings, DBSettings.getLocalDefault());
+		runSeeDB(query, settings, DBSettings.getDefault());
 	}
 	
 	public static void main(String[] args) {

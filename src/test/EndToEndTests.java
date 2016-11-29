@@ -184,7 +184,8 @@ public class EndToEndTests {
 		settings.useParallelExecution = false;
 		settings.mergeQueries = false;
 		settings.normalizeDistributions = false;
-		runSeeDB(query1, settings, DBSettings.getLocalDefault());
+//		runSeeDB(query1, settings, DBSettings.getLocalDefault());
+		runSeeDB(query1, settings, DBSettings.getDefault());
 	}
 	
 	private boolean checkCorrectness(List<View> result, String query) {
@@ -272,7 +273,7 @@ public class EndToEndTests {
 		settings.useParallelExecution 			= true;
 		settings.useTempTables 					= false;
 		System.out.println("using postgres");
-		runSeeDB(s_1_query1, settings, DBSettings.getPostgresDefault());
+		runSeeDB(s_1_query1, settings, DBSettings.getDefault());
 	}
 	
 	public void allSystemOptimizationsParallel() {
@@ -289,7 +290,8 @@ public class EndToEndTests {
 		settings.useParallelExecution 			= true;
 		settings.useTempTables 					= false;
 		settings.maxGroupBySize 				= 3;
-		runSeeDB(s_1_query1, settings, DBSettings.getPostgresDefault());
+//		runSeeDB(s_1_query1, settings, DBSettings.getPostgresDefault());
+		runSeeDB(s_1_query1, settings, DBSettings.getDefault());
 	}
 	
 	public void allSystemOptimizationsTempTablesParallel() {
@@ -308,6 +310,7 @@ public class EndToEndTests {
 		settings.maxGroupBySize 				= 3;
 		//settings.useHeuristic					= true;
 		settings.maxDBConnections				= 4;
-		runSeeDB(s_1_query1, settings, DBSettings.getVerticaDefault());
+//		runSeeDB(s_1_query1, settings, DBSettings.getVerticaDefault());
+		runSeeDB(s_1_query1, settings, DBSettings.getDefault());
 	}
 }
