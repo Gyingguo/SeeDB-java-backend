@@ -90,6 +90,19 @@ public class InputTablesMetadata {
 							this.dimensionAttributes.add(new Attribute(attribute));
 						}
 					}
+					// TODO[GUOYUYING]
+					else {
+						if (splitParts.length > 1) {
+							try {
+								this.dimensionAttributes.add(new Attribute(attribute, Integer.parseInt(splitParts[1])));
+							} catch (NumberFormatException e) {
+								this.dimensionAttributes.add(new Attribute(attribute));
+							}
+						}
+						else {
+							this.dimensionAttributes.add(new Attribute(attribute));
+						}
+					}
 				}
 			} catch (SQLException e) {
 				continue;

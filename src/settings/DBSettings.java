@@ -8,9 +8,11 @@ public class DBSettings {
 	
 	public static DBSettings getDefault() {
 		DBSettings s = new DBSettings();
-		s.database = "seedb_data";
+		s.database = "localhost/seedb_data";
 		s.databaseType = "postgresql";
-
+		s.username = "postgres";
+		s.password = "123456";
+		
 		return s;
 	}
 	

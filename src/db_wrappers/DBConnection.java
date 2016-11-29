@@ -52,6 +52,7 @@ public class DBConnection {
 	 */
 	public boolean connectToDatabase(String database, String databaseType, 
 			String username, String password) {
+		System.out.println("connect postgreSQL jdbc......");
 		if ((database == null) || (databaseType == null) || (username == null) 
 				|| (password == null)) return false;
 		if (!isDBSupported(databaseType)) return false;
@@ -70,10 +71,11 @@ public class DBConnection {
 		}
 		
 		//attempt to connect
-		try {
+		try {			
 			connection = DriverManager.getConnection(
 					"jdbc:" + databaseType + "://" + database, username,
 					password);
+			
 			Statement stmt = connection.createStatement();
 			if (databaseType.equalsIgnoreCase("PostgreSQL")) {
 				stmt.execute("set work_mem=" + 1000000 + ";");

@@ -104,6 +104,7 @@ public class SeeDB {
 	 * @return
 	 */
 	public boolean connectToDatabase() {
+		// System.out.println("connecting database......");
 		return connection.connectToDatabase(DBSettings.getDefault());
 	}
 
@@ -250,6 +251,9 @@ public class SeeDB {
 	 */
 	public InputTablesMetadata[] getMetadata(List<String> tables1, List<String> tables2, int numDatasets) {
 		InputTablesMetadata[] queryMetadatas = new InputTablesMetadata[] {null, null};
+		
+		System.out.println("table1: " + tables1.get(0) + "   table2: " + tables2.get(0));
+		
 		queryMetadatas[0] = new InputTablesMetadata(tables1, this.connection);
 		if (numDatasets == 2) {
 			queryMetadatas[1] = new InputTablesMetadata(tables2, this.connection);
@@ -308,11 +312,12 @@ public class SeeDB {
 			}
 		}
 		
-		if (queryMetadatas[0].getDimensionAttributes().isEmpty() ||
-			queryMetadatas[0].getMeasureAttributes().isEmpty()) {
-			System.out.println("There are no dimensions or measures, quitting");
-			return Lists.newArrayList();
-		}
+		// TODO[GUOYUYING]: temporary comment
+//		if (queryMetadatas[0].getDimensionAttributes().isEmpty() ||
+//			queryMetadatas[0].getMeasureAttributes().isEmpty()) {
+//			System.out.println("There are no dimensions or measures, quitting");
+//			return Lists.newArrayList();
+//		}
 		fixOptimizationSettings();
 		
 		// compute queries we want to execute

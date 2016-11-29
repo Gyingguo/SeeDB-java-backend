@@ -217,6 +217,7 @@ public class QueryExecutor {
 		ResultSet rs = null;
 		ResultSetMetaData rsmd = null;
 		long start = System.currentTimeMillis();
+		System.out.println("query: " + query);
 		rs = con.executeQuery(query);
 		if (group < 2) {
 			dbmsTargetViewExecutionTime += System.currentTimeMillis() - start;	
